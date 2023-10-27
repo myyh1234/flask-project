@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>게시판</title>
+</head>
+<body>
+    <br>
+    <h1>게시판</h1>
+
+    <table style="border: 1px solid">
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성날짜</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in post_list %}
+            <tr>
+                <td>{{ i.id }}</td>
+                <td><a href="/detail/{{ i.id }}">{{ i.title }}</a></td>
+                <td>{{ i.datetime }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <hr>
+    <button type="button" onclick="location.href = '/post'">글쓰기</button>
+</body>
+</html>

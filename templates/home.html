@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+</head>
+<body>
+    {%with messages = get_flashed_messages()%}
+    {%if messages %}
+    <script type="text/javascript">
+        alert("{{messages[-1]}}");
+    </script>
+    <h1>{{messages[-1]}}</h1>
+    {%endif%}
+    {%endwith%}
+
+    <h1>Home</h1>
+
+    <a href="post_list/">게시물 목록</a>
+    <br>
+    <a href="logout/">로그아웃</a>
+</body>
+</html>
